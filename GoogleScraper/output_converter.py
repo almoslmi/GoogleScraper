@@ -127,7 +127,7 @@ def row2dict(obj):
     """Convert sql alchemy object to dictionary."""
     d = {}
     for column in obj.__table__.columns:
-        d[column.name] = str(getattr(obj, column.name))
+        d[column.name] = str(getattr(obj, column.name)).encode("utf-8")
 
     return d
 
